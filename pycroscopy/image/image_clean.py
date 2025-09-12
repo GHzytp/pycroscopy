@@ -90,7 +90,7 @@ def decon_lr(o_image, resolution=0.1,  verbose=False):
     if len(o_image) < 1:
         return o_image
 
-    image_dimensions = o_image.get_image_dims(return_axis=True)
+    image_dimensions = o_image.dim_0.slope #o_image.get_image_dims(return_axis=True)
     scale_x = image_dimensions[0].slope
     gauss_diameter = resolution/scale_x
     probe = make_gauss(o_image.shape[0], o_image.shape[1], gauss_diameter)
